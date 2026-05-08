@@ -1,0 +1,70 @@
+[
+  {
+    "id": 1,
+    "name": "Floral Cotton Summer Dress",
+    "price": 1200,
+    "category": "Summer Dress",
+    "image": "/dresses/dress1.jpg",
+    "details": [
+      "100% breathable cotton fabric",
+      "Lightweight and soft material",
+      "Floral printed stylish design",
+      "Perfect for hot summer weather",
+      "Comfortable daily wear outfit",
+      "Knee-length modern cut",
+      "Easy to wash and maintain",
+      "Suitable for casual outings"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Sleeveless Linen Dress",
+    "price": 1500,
+    "category": "Summer Dress",
+    "image": "/dresses/dress2.jpg",
+    "details": [
+      "Premium quality linen fabric",
+      "Sleeveless comfortable design",
+      "Highly breathable material",
+      "Loose and relaxed fit",
+      "Elegant minimal look",
+      "Perfect for beach and travel",
+      "Lightweight summer outfit",
+      "Wrinkle-friendly texture"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Casual Maxi Summer Dress",
+    "price": 1800,
+    "category": "Summer Dress",
+    "image": "/dresses/dress3.jpg",
+    "details": [
+      "Full-length maxi style dress",
+      "Soft rayon flowy fabric",
+      "Trendy floral pattern",
+      "Comfortable all-day wear",
+      "Perfect for outdoor events",
+      "Stylish and elegant design",
+      "Breathable summer outfit",
+      "Relaxed fit structure"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Boho Chic Summer Dress",
+    "price": 2000,
+    "category": "Summer Dress",
+    "image": "/dresses/dress4.jpg",
+    "details": [
+      "Bohemian inspired design",
+      "Soft lightweight fabric",
+      "Embroidered stylish details",
+      "Relaxed loose fitting",
+      "Perfect for beach vibe",
+      "Trendy summer fashion",
+      "Comfortable daily use",
+      "Feminine elegant look"
+    ]
+  }
+]

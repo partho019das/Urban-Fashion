@@ -1,0 +1,104 @@
+[
+  {
+    "id": 5,
+    "name": "Striped Casual Summer Dress",
+    "price": 1300,
+    "category": "Summer Dress",
+    "image": "/dresses/dress5.jpg",
+    "details": [
+      "Classic striped pattern design",
+      "Soft breathable cotton fabric",
+      "Comfortable for daily wear",
+      "Knee-length casual style",
+      "Lightweight summer outfit",
+      "Easy to style with sneakers",
+      "Relaxed fit for hot weather",
+      "Simple and modern look"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Elegant Chiffon Party Dress",
+    "price": 2200,
+    "category": "Summer Dress",
+    "image": "/dresses/dress6.jpg",
+    "details": [
+      "Premium chiffon lightweight fabric",
+      "Flowy elegant design",
+      "Perfect for summer parties",
+      "Soft and smooth texture",
+      "Stylish feminine look",
+      "Comfortable fit for long wear",
+      "Beautiful draping style",
+      "Trendy modern fashion"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Plain Midi Cotton Dress",
+    "price": 1400,
+    "category": "Summer Dress",
+    "image": "/dresses/dress7.jpg",
+    "details": [
+      "Simple plain cotton fabric",
+      "Midi length elegant design",
+      "Breathable summer wear",
+      "Soft and comfortable feel",
+      "Perfect for daily use",
+      "Minimal stylish look",
+      "Easy to maintain",
+      "Lightweight outfit"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Boho Floral Maxi Dress",
+    "price": 2100,
+    "category": "Summer Dress",
+    "image": "/dresses/dress8.jpg",
+    "details": [
+      "Bohemian floral print design",
+      "Full-length maxi dress",
+      "Soft airy fabric",
+      "Perfect for beach wear",
+      "Trendy summer style",
+      "Loose comfortable fit",
+      "Elegant and stylish look",
+      "Ideal for vacation outfit"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Sleeve Puff Summer Dress",
+    "price": 1700,
+    "category": "Summer Dress",
+    "image": "/dresses/dress9.jpg",
+    "details": [
+      "Puff sleeve stylish design",
+      "Soft cotton blend fabric",
+      "Trendy modern fashion",
+      "Comfortable summer wear",
+      "Knee-length cut",
+      "Elegant feminine look",
+      "Lightweight breathable outfit",
+      "Perfect for outings"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Beach Vibe Short Dress",
+    "price": 1600,
+    "category": "Summer Dress",
+    "image": "/dresses/dress10.jpg",
+    "details": [
+      "Short beach style dress",
+      "Light and airy fabric",
+      "Perfect for hot summer days",
+      "Casual vacation outfit",
+      "Stylish summer vibe",
+      "Easy to wear and carry",
+      "Comfortable loose fit",
+      "Trendy youthful look"
+    ]
+  }
+]
