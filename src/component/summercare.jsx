@@ -17,7 +17,7 @@ const Summercare = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
                 {/* Card 1: SPF */}
-                <div className="p-8 rounded-2xl bg-default-50 border border-default-100 shadow-sm flex flex-col items-center justify-center text-center transition hover:shadow-md">
+                <div className="p-8 rounded-2xl bg-default-50 border border-default-100 shadow-sm flex flex-col items-center  justify-center text-center transition hover:shadow-md">
                     <h3 className="text-2xl font-bold text-foreground mb-4">
                         Defend Your Skin with SPF
                     </h3>
