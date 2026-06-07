@@ -4,6 +4,7 @@ import Product from "@/component/product";
 import Summercare from "@/component/summercare";
 import Topband from "@/component/topband";
 import Image from "next/image";
+import SignUpPage from "./signup/page";
 
 export default function Home() {
   return (
