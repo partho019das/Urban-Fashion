@@ -1,8 +1,7 @@
 "use client";
 import { authClient } from "@/lib/auth-clint";
 import { Check } from "@gravity-ui/icons";
-import { useRouter } from "next/navigation"; // সফল হলে হোম পেজে রিডাইরেক্ট করার জন্য
-
+import { useState } from "react";
 import {
   Button,
   Card,
@@ -13,36 +12,45 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+import { GrGoogle } from "react-icons/gr";
 
 export default function SignUpPage() {
-  const router = useRouter();
+  // ⚡ HeroUI ইনপুটের ডাটা ধরার জন্য স্টেট
+  const [name, setName] = useState("");
+  const [image, setImage] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const onSubmit = async (e) => {
     e.preventDefault();
     
-    // 🔥 HeroUI ফর্ম থেকে ডেটা তোলার সঠিক ও স্ট্যান্ডার্ড উপায়
-    const dataObj = Object.fromEntries(new FormData(e.currentTarget));
-    const { name, email, password, image } = dataObj;
-
-    // Better Auth-এ ডেটা পাঠানো
+    // Better Auth-এ স্টেট থেকে নিখুঁতভাবে ডেটা পাঠানো
     const { data, error } = await authClient.signUp.email({
       name,
       email,
       password,
-      image, 
+      image: image || undefined, 
     });
 
     console.log({ data, error });
 
     if (data) {
       alert("Sign Up Successful!");
-      router.push("/"); // সাইন-আপ হয়ে গেলে হোম পেজে নিয়ে যাবে
+      // ⚡ রাউটারের কনফ্লিক্ট এড়াতে সরাসরি উইন্ডো রিলোড দিয়ে হোম পেজে নিয়ে যাওয়া হলো
+      window.location.assign("/"); 
     }
 
- if (error) {
-  // Better Auth-এর এরর মেসেজ অথবা ডিফল্ট মেসেজ
-  alert(error.message || "Something went wrong!");
-}
+    if (error) {
+      alert(error.message || "Something went wrong!");
+    }
+  };
+
+  const handleGoogleSignin = async (e) => {
+    e.preventDefault(); // ফর্ম সাবমিট ইভেন্ট প্রোটেকশন
+    await authClient.signIn.social({
+      provider: "google",
+      callbackURL: "/",
+    });
   };
 
   return (
@@ -52,13 +60,21 @@ export default function SignUpPage() {
       <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
         <TextField isRequired name="name" type="text">
           <Label>Name</Label>
-          <Input placeholder="Enter your name" />
+          <Input 
+            placeholder="Enter your name" 
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
           <FieldError />
         </TextField>
 
         <TextField isRequired name="image" type="text">
           <Label>Image URL</Label>
-          <Input placeholder="Image URL" />
+          <Input 
+            placeholder="Image URL" 
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
+          />
           <FieldError />
         </TextField>
 
@@ -74,7 +90,11 @@ export default function SignUpPage() {
           }}
         >
           <Label>Email</Label>
-          <Input placeholder="john@example.com" />
+          <Input 
+            placeholder="john@example.com" 
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
           <FieldError />
         </TextField>
 
@@ -96,23 +116,37 @@ export default function SignUpPage() {
           }}
         >
           <Label>Password</Label>
-          <Input placeholder="Enter your password" />
+          <Input 
+            placeholder="Enter your password" 
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
           <Description>
             Must be at least 8 characters with 1 uppercase and 1 number
           </Description>
           <FieldError />
         </TextField>
 
-        <div className="flex gap-2">
-          <Button type="submit">
+        <div className="text-center">
+          <Button className="w-full text-xl hover:bg-red-500" type="submit">
             <Check />
-            Submit
-          </Button>
-          <Button type="reset" variant="secondary">
-            Reset
+            Signin
           </Button>
         </div>
       </Form>
+      
+      <p className="text-center mt-4"> or </p>
+      
+      <Button 
+        type="button" 
+        onClick={handleGoogleSignin} 
+        variant="outline" 
+        className="w-full hover:bg-sky-600 hover:text-white"
+      > 
+        <GrGoogle /> SignUp With Google
+      </Button>
+
     </Card>
   );
 }
