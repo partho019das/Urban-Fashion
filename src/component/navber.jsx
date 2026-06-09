@@ -46,8 +46,8 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <Link href="/signup">Sign Up</Link>
-          <Link href="/login">Sign In</Link>
+          <Link href="/signup" className="hover:bg-sky-500 hover:text-white p-1">Sign Up</Link>
+          <Link href="/login" className="hover:bg-sky-500 hover:text-white p-1">Login</Link>
         </div>
       </div>
     </nav>
