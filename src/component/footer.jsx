@@ -16,7 +16,7 @@ const Footer = () => {
         <div>
           <h1 className="text-3xl font-bold">
             <span className="bg-white text-black px-2 py-1 rounded">
-              YOURBAN
+              URBAN
             </span>{" "}
             <span className="text-amber-600">FASHION</span>
           </h1>
@@ -57,7 +57,7 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-gray-700 mt-8 pt-4 text-center text-gray-500 text-sm">
-        © 2026 YOURBAN FASHION
+        © 2026 URBAN FASHION
       </div>
 
     </footer>
