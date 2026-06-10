@@ -25,7 +25,6 @@
 //         }
 //     }
 // });
-
 import { betterAuth } from "better-auth";
 import { MongoClient } from "mongodb";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
@@ -34,13 +33,21 @@ if (!process.env.MONGODB_URI) {
   throw new Error("Please add your MONGODB_URI to .env file");
 }
 
-// MongoDB Client (একবারই কানেক্ট হয়)
-const client = new MongoClient(process.env.MONGODB_URI);
-const db = client.db();
+if (!process.env.BETTER_AUTH_SECRET) {
+  throw new Error("Please add BETTER_AUTH_SECRET to .env file");
+}
+
+const client = new MongoClient(process.env.MONGODB_URI, {
+  maxPoolSize: 10,
+  serverSelectionTimeoutMS: 15000,
+});
+
+const db = client.db("partho-data");
 
 export const auth = betterAuth({
-    // ✅ BETTER_AUTH_URL অবশ্যই সেট করো
     baseURL: process.env.BETTER_AUTH_URL,
+
+    secret: process.env.BETTER_AUTH_SECRET,
 
     database: mongodbAdapter(db),
 
@@ -53,8 +60,5 @@ export const auth = betterAuth({
             clientId: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
         }
-    },
-
-    // Optional: Security এর জন্য
-    secret: process.env.BETTER_AUTH_SECRET,
+    }
 });
