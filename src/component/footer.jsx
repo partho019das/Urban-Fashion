@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import Link from "next/link";
 import {
   FaFacebookF,
   FaInstagram,
@@ -8,58 +11,104 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-10 px-6 w-full">
+    <footer className="bg-white text-gray-800 border-t border-gray-100 py-16 px-6 w-full font-sans">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-
-        {/* LOGO */}
-        <div>
-          <h1 className="text-3xl font-bold">
-            <span className="bg-white text-black px-2 py-1 rounded">
+        {/* LOGO & BRAND DESCRIPTION */}
+        <div className="flex flex-col items-center md:items-start text-center md:text-left">
+          <h1 className="text-3xl font-black tracking-wider text-gray-900">
+            <span className="bg-gray-900 text-white px-2.5 py-1 rounded-md text-2xl mr-1">
               URBAN
             </span>{" "}
-            <span className="text-amber-600">FASHION</span>
+            <span className="text-amber-500">FASHION</span>
           </h1>
-
-          <p className="text-gray-400 mt-3">
-            Trendy Fashion For Modern Lifestyle
+          <p className="text-slate-500 text-sm mt-4 max-w-sm font-medium leading-relaxed">
+            Trendy Fashion For Modern Lifestyle. Crafting premium quality apparel that defines your ultimate comfort and style statement.
           </p>
         </div>
 
-        {/* MENU */}
-        <div className="text-center">
-          <h2 className="text-xl font-semibold mb-4 text-amber-300">
-            FASHION
+        {/* QUICK NAVIGATION MENU */}
+        <div className="flex flex-col items-center text-center">
+          <h2 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-5">
+            Explore Fashion
           </h2>
-
-          <ul className="space-y-2 text-gray-300">
-            <li className="hover:text-amber-500 cursor-pointer transition">Home</li>
-            <li className="hover:text-amber-500 cursor-pointer transition">Shop</li>
-            <li className="hover:text-amber-500 cursor-pointer transition">New Arrivals</li>
-            <li className="hover:text-amber-500 cursor-pointer transition">Contact</li>
+          <ul className="space-y-3 font-semibold text-gray-600 text-base">
+            <li>
+              <Link href="/" className="hover:text-amber-500 transition-colors duration-300 block">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/shop" className="hover:text-amber-500 transition-colors duration-300 block">
+                Shop
+              </Link>
+            </li>
+            <li>
+              <Link href="/new-arrivals" className="hover:text-amber-500 transition-colors duration-300 block">
+                New Arrivals
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:text-amber-500 transition-colors duration-300 block">
+                Contact
+              </Link>
+            </li>
           </ul>
         </div>
 
-        {/* SOCIAL */}
-        <div className="flex flex-col items-center md:items-end">
-          <h2 className="text-xl font-semibold mb-4 text-amber-300">
-            Follow Us
+        {/* SOCIAL LINKS & NEWSLETTER */}
+        <div className="flex flex-col items-center md:items-end text-center md:text-right">
+          <h2 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-5">
+            Follow Our Journey
           </h2>
-
-          <div className="flex gap-5 text-2xl">
-            <FaFacebookF className="hover:text-amber-500 cursor-pointer transition" />
-            <FaInstagram className="hover:text-amber-500 cursor-pointer transition" />
-            <FaTwitter className="hover:text-amber-500 cursor-pointer transition" />
-            <FaYoutube className="hover:text-amber-500 cursor-pointer transition" />
+          <div className="flex gap-4 text-xl">
+            <a 
+              href="https://facebook.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="w-10 h-10 rounded-full bg-slate-50 border border-gray-200/60 flex items-center justify-center text-gray-600 hover:text-white hover:bg-amber-500 hover:border-amber-500 transition-all duration-300 shadow-sm"
+            >
+              <FaFacebookF size={16} />
+            </a>
+            <a 
+              href="https://instagram.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="w-10 h-10 rounded-full bg-slate-50 border border-gray-200/60 flex items-center justify-center text-gray-600 hover:text-white hover:bg-amber-500 hover:border-amber-500 transition-all duration-300 shadow-sm"
+            >
+              <FaInstagram size={16} />
+            </a>
+            <a 
+              href="https://twitter.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="w-10 h-10 rounded-full bg-slate-50 border border-gray-200/60 flex items-center justify-center text-gray-600 hover:text-white hover:bg-amber-500 hover:border-amber-500 transition-all duration-300 shadow-sm"
+            >
+              <FaTwitter size={16} />
+            </a>
+            <a 
+              href="https://youtube.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="w-10 h-10 rounded-full bg-slate-50 border border-gray-200/60 flex items-center justify-center text-gray-600 hover:text-white hover:bg-amber-500 hover:border-amber-500 transition-all duration-300 shadow-sm"
+            >
+              <FaYoutube size={16} />
+            </a>
           </div>
         </div>
 
       </div>
 
-      <div className="border-t border-gray-700 mt-8 pt-4 text-center text-gray-500 text-sm">
-        © 2026 URBAN FASHION
+      {/* COPYRIGHT & BOTTOM BAR */}
+      <div className="max-w-6xl mx-auto border-t border-gray-100 mt-16 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-400 text-xs font-semibold tracking-wider">
+        <div>
+          &copy; {new Date().getFullYear()} URBAN FASHION. ALL RIGHTS RESERVED.
+        </div>
+        <div className="flex gap-6 text-slate-400">
+          <Link href="/privacy" className="hover:text-gray-600 transition-colors">Privacy Policy</Link>
+          <Link href="/terms" className="hover:text-gray-600 transition-colors">Terms of Service</Link>
+        </div>
       </div>
-
     </footer>
   );
 };

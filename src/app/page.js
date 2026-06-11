@@ -13,7 +13,7 @@ export default function Home() {
       <Product></Product>
       <Summercare> </Summercare>
       <Topband> </Topband>
-      <Footer> </Footer>
+      {/* <Footer> </Footer> */}
     </div>
   );
 }

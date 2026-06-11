@@ -24,7 +24,7 @@ export default function SignUpPage() {
   const onSubmit = async (e) => {
     e.preventDefault();
     
-    // Better Auth-এ স্টেট থেকে নিখুঁতভাবে ডেটা পাঠানো
+ 
     const { data, error } = await authClient.signUp.email({
       name,
       email,
@@ -36,8 +36,8 @@ export default function SignUpPage() {
 
     if (data) {
       alert("Sign Up Successful!");
-      // ⚡ রাউটারের কনফ্লিক্ট এড়াতে সরাসরি উইন্ডো রিলোড দিয়ে হোম পেজে নিয়ে যাওয়া হলো
-      window.location.assign("/"); 
+    
+      window.location.assign("/login"); 
     }
 
     if (error) {
@@ -46,7 +46,7 @@ export default function SignUpPage() {
   };
 
   const handleGoogleSignin = async (e) => {
-    e.preventDefault(); // ফর্ম সাবমিট ইভেন্ট প্রোটেকশন
+    e.preventDefault();
     await authClient.signIn.social({
       provider: "google",
       callbackURL: "/",
