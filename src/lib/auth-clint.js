@@ -9,7 +9,5 @@ import { createAuthClient } from "better-auth/react";
 
 export const authClient = createAuthClient({
     // এটি লোকাল ও লাইভ ডোমেইনে অটোমেটিক সঠিক /api/auth পাথ হ্যান্ডেল করবে
-    baseURL: process.env.NODE_ENV === "production"
-        ? "https://urban-fashion1.netlify.app/api/auth"
-        : "http://localhost:3000/api/auth"
+    baseURL: process.env.BETTER_AUTH_URL//localhost:3000/api/auth"
 });
