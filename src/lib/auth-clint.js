@@ -8,7 +8,8 @@
 import { createAuthClient } from "better-auth/react";
 
 export const authClient = createAuthClient({
-    // এটি লোকালহোস্টে থাকলে http://localhost:3000 নিবে, 
-    // আর নেটলিফাইতে থাকলে অটোমেটিক লাইভ সাইটের লিংকটি নিয়ে নিবে!
-    baseURL: process.env.NEXT_PUBLIC_APP_URL
+    // এটি লোকাল ও লাইভ ডোমেইনে অটোমেটিক সঠিক /api/auth পাথ হ্যান্ডেল করবে
+    baseURL: process.env.NODE_ENV === "production"
+        ? "https://urban-fashion1.netlify.app/api/auth"
+        : "http://localhost:3000/api/auth"
 });

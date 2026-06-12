@@ -45,16 +45,12 @@ const client = new MongoClient(process.env.MONGODB_URI, {
 const db = client.db("partho-data");
 
 export const auth = betterAuth({
-    // প্রোডাকশনে সার্ভারের জন্য /api/auth পাথটি লাগবেই, তাই লোকাল ও লাইভ দুটোর জন্যই ডাইনামিক করে দেওয়া হলো
     baseURL: process.env.NODE_ENV === "production" 
         ? "https://urban-fashion1.netlify.app/api/auth" 
         : "http://localhost:3000/api/auth",
 
     secret: process.env.BETTER_AUTH_SECRET,
-
     database: mongodbAdapter(db),
-
-    // প্রোডাকশনে ক্রস-অরিজিন রিকোয়েস্ট সিকিউর করার জন্য এটি মাস্ট
     trustedHeaders: true,
 
     emailAndPassword: {
