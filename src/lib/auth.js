@@ -29,29 +29,15 @@ import { betterAuth } from "better-auth";
 import { MongoClient } from "mongodb";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 
-if (!process.env.MONGODB_URI) {
-  throw new Error("Please add your MONGODB_URI to .env file");
-}
 
-if (!process.env.BETTER_AUTH_SECRET) {
-  throw new Error("Please add BETTER_AUTH_SECRET to .env file");
-}
-
-const client = new MongoClient(process.env.MONGODB_URI, {
-  maxPoolSize: 10,
-  serverSelectionTimeoutMS: 15000,
-});
+const client = new MongoClient(process.env.MONGODB_URI)
 
 const db = client.db("partho-data");
 
 export const auth = betterAuth({
-    baseURL: process.env.NODE_ENV === "production" 
-        ? "https://urban-fashion1.netlify.app/api/auth" 
-        : "http://localhost:3000/api/auth",
+   
+    database: mongodbAdapter(db,{client}),
 
-    secret: process.env.BETTER_AUTH_SECRET,
-    database: mongodbAdapter(db),
-    trustedHeaders: true,
 
     emailAndPassword: {
         enabled: true,

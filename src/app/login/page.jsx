@@ -1,5 +1,5 @@
 "use client";
-import { authClient } from "@/lib/auth-clint"; 
+import { authClient } from "@/lib/auth-client"; 
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { useState, Suspense } from "react"; // Suspense ইম্পোর্ট করা হয়েছে

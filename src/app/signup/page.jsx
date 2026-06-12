@@ -1,5 +1,5 @@
 "use client";
-import { authClient } from "@/lib/auth-clint";
+import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import { useState } from "react";
 import {

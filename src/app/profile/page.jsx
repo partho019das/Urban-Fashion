@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { authClient } from "@/lib/auth-clint";
+import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 
 const Myprofilepage = () => {

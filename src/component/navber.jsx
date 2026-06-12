@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react'; 
-import { authClient } from "@/lib/auth-clint"; 
+import { authClient } from "@/lib/auth-client"; 
 import { Link } from "@heroui/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
