@@ -76,7 +76,7 @@ const Navbar = () => {
         {/* Right Side UI Buttons */}
         <div className="flex items-center gap-4">
           {!mounted || isPending ? (
-            <div className="w-6 h-6 border-2 border-sky-500 border-t-transparent rounded-full animate-spin" />
+            <div className="w-6 h-6 border-3 border-sky-500 border-t-transparent rounded-full animate-spin" />
           ) : session?.user ? (
             <>
               {/* Profile Avatar with Moving Border Glow */}
